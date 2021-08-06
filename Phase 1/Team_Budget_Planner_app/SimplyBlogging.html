@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="simplyblogging.css"  />
+    <link rel="stylesheet" href="simplyblogging.js"  />
+    <style>
+        div{
+            margin: 5px;
+
+        }
+        .Form-group{
+            margin-left: 20px;
+            margin-top: 70px;;
+        }
+        h2{
+            font: 200;
+            font-weight: bold;
+        }
+        .nav{
+            margin-right: 0px;
+            
+        }
+        body{
+            width:100vw;
+        }
+    </style>
+</head>
+<body>
+
+    <h2> Simply Blogging</h2>
+    
+    <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Add Blog </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About Us</a>
+        </li>
+        
+      </ul>   
+      
+      <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" src="https://appian.com/content/appian-aem/en/resources/partners/all-partners/tata-consultancy-services/_jcr_content/root/container/container_1705898074/image.coreimg.jpeg/1608135840822/tcs-company-mark-vertical-stacked-3-lines-cmyk.jpeg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+      </div>
+   
+    <div class = "container">
+        <form class  = "Form-group">
+            
+            <div class="row">
+                <div class="col-2"><label>Title:</label></div>
+         <div class="col-3"><input type="text" name="title" class="title"/></div>
+         </div>
+         <div class="row">
+             <div class="col-2"><label>Article Content:</label></div>
+             <div class="col-3"><input type="text" name="article" class="article"/></div>
+         </div>
+         <div class="row">
+            <div class="col-2"><label>Image:</label></div>
+            <div class="col-3"><input type="url" name="img-src" class="images"/></div>
+        </div>
+         <div class="row">
+             <div class="col-2"><input type="button" value="Add Blog" class="btn btn-group" onClick = "storeData()"/></div>
+             <div class="col-2"><input type="reset" value="reset" class="btn btn-group"/></div>
+         </div> 
+        </form> 
+    </div>
+    <hr/>
+    <script>
+        console.dir(document);
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
