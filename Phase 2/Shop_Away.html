@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Away</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="shopping cart.ts"></script>
+</head>
+<style>
+#item1{
+    margin-top: 20px;
+    size: 24px;
+    border-style: solid;
+}
+#item2{
+    size: 24px;
+}
+
+</style>
+
+<h2>Shopping List </h2>
+
+<label id = cartsize> Cart Size: </label>
+<a href = shopping_checkout.html>Checkout</a>
+<body>
+    
+    
+    <div class="col" id = "peach">
+        <p >Name: Peach</p><br>
+        <p>Price: $1.15</p><br>
+        <img width="150px" src="https://media.istockphoto.com/photos/peach-isolate-peach-with-slice-on-white-background-full-depth-of-picture-id1200767905?k=6&m=1200767905&s=612x612&w=0&h=I2mTjY_-OuPL7bQzwbVWcUkea8_INy7SiUo80BT71BU=" alt="peach">
+        <br><input type="button" value="Add" onclick="addItem('peach', 1.15)">
+        <!-- <input type="button" onclick="addItem()"> -->
+    </div>
+
+
+    <div class="col" id = "grapes">
+        <p>Name: Green Grapes fullsize bag</p><br>
+        <p>Price: $1.05</p><br>
+        <img width="150px" src="https://i1.wp.com/www.eatthis.com/wp-content/uploads/2019/09/green-grapes-bunch.jpg?fit=1200%2C879&ssl=1" alt="grapes">
+        <br><input type="button" value="Add" onclick="addItem('green grapes', 1.05)">
+       <!-- <input type="button" onclick="addItem2()"> -->
+    </div>
+
+
+
+    <div class="col" id = "watermelon">
+        <p>Name: Watermelon</p><br>
+        <p>Price: $2.50</p><br>
+        <img width="150px" src= "https://cdn.britannica.com/99/143599-050-C3289491/Watermelon.jpg" alt="watermelon">
+        <br><input type="button" value="Add" onclick="addItem('watermelon', 2.50)">
+    </div>
+
+   <!-- <form id = "item2">
+    <div>
+    <label> Name: </label> </br>
+    <label> Price: </label> </br>
+    <input type = "button" value = Add />
+    </div> -->
+    <!---</form>
+    <form id = "item3">
+    </form>
+    <form id = "item4"> 
+    </form>
+-->
+
+
+</body>
+</html>

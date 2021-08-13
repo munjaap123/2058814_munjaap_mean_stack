@@ -1,6 +1,61 @@
 
 
-type Offer = {
+var name: string;
+var price: number;
+var currentCount = 0;
+var item;
+var itemStrings;
+var tableContent;
+
+var shopAwayCart = [];
+
+function addItem(name,price){
+    console.log(name);
+    console.log(price);
+
+
+
+var counting = document.createElement("div");
+
+document.getElementById("cartItems").appendChild(counting);
+currentCount++;
+
+
+item = {nm: name, p: price, qty: currentCount};
+itemStrings = JSON.stringify(item);
+localStorage.setItem("Items", itemStrings);
+
+
+shopAwayCart.push(item);
+localStorage.setItem("Shopping Items:", JSON.stringify(shopAwayCart));
+
+  
+}
+
+function display(){
+
+let table= <HTMLDivElement>document.getElementById('table-content');
+
+if(table){
+    table.innerHTML = tableContent;
+}
+
+}
+
+/*function removeItem(itemName:string){
+    let comps = JSON.parse(sessionStorage.getItem("comps") || "[]");
+    let filtered;
+    console.log(comps);
+    for(let i:number=0; i<comps.length;i++){
+        filtered = comps.filter(o => !(o.it.includes("Peach")));
+    }
+    comps = filtered;
+    console.log(comps);
+}
+
+
+
+/*type Offer = {
     price: number,
     amount: number,
   }
@@ -11,16 +66,12 @@ type Offer = {
     price: number,
     offer: Offer | null,
   }
-  
-
-  
-
 
   const products: Array<Product> = [
-    {id: 'A99', name: 'Apple', price: 50, offer: {price: 130, amount: 3}},
-    {id: 'B15', name: 'Banana', price: 30, offer: {price: 45, amount: 2}},
-    {id: 'C40', name: 'Cherry', price: 60, offer: null},
-    {id: 'T34', name: 'Tangerine', price: 99, offer: null},
+    {id: 'peach', name: 'Peach', price: 50, offer: {price: 130, amount: 3}},
+    {id: 'grapes', name: 'Grapes', price: 30, offer: {price: 45, amount: 2}},
+    {id: 'watermelon', name: 'Watermelon', price: 60, offer: null},
+    //{id: 'T34', name: 'Tangerine', price: 99, offer: null},
   ];
   export const checkout = (itemIds: Array<string>): number => {
     let total: number = 0;
@@ -49,8 +100,8 @@ type Offer = {
             }
           } else {
             total += price;
-          }
-        }
+         }
+         }
       });
     });
   
@@ -73,4 +124,4 @@ type Offer = {
     const checkoutTotal = checkout(itemIds);
     const savedAmount = getFullTotal(itemIds) - checkoutTotal;
     console.log(`The total is ${checkoutTotal}${savedAmount ? `, you saved ${savedAmount} today.` : `.`}`);
-  };
+  } */
