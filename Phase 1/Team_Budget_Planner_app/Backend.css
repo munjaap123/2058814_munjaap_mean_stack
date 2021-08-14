@@ -9,15 +9,20 @@
 
 #ClientName {
     
-    color: maroon;
+    color: black;
     width:400px;
     display: inline-block;
     text-align: right;
     font-weight: bold; 
 }
 
+#head{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
  input{
-    border-color: maroon ; 
+    
     border-width: 3.5px;
     text-align-last:auto;
 }
@@ -28,13 +33,14 @@
     color: red;
 }
 
-.Back{
+/*.Back{
     margin-left:20px;
+    margin-top: 300px;
 
-}
+}*/
 #ProjectName {
     
-    color:maroon;
+    color:black;
     font-weight:bold ;
     text-align:right;
     display: inline-block;
@@ -46,7 +52,7 @@ form{
 }
 
 .Budget{
-    color: maroon;
+    
     font-weight:  bold;
     text-align: right;
     display:inline-block;

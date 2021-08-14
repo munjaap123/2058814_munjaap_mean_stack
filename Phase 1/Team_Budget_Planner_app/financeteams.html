@@ -4,37 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Project</title>
     <link rel="stylesheet" type="text/css" href="Backend.css"/>
     <script src="team_Planner_operations.js"></script>
 </head>
-<input type = "button" value="Display"  onload="display()"/>
-<p class = heading>Annual Budget</p>
-<body>
+<!--<input type = "button" value="Display"  onclick="display()"/> -->
+<body onload="display()">
 
-<table id ="storageTable" border = 1>
-<tr>
-    <td>Client Name</td>
+<h2>Annual Budget</p>
 
-    <td>Project Name</td>
-    <td>Budget</td>
-
-</tr>
-
-
-</table>
+<div id ="table">
 
 
 
+</div>
 
 </body>
-
-
-
-<a href = "TeamBudgetPlanner.html">
-    <button class = "Back">
-        Back
-    </button>
+<input type="button" value = "Delete Entries" onclick="deleteEntry()"> 
+<a href = "TeamBudgetPlanner.html"> 
+    Back
+</a>
 
 
 </html>
