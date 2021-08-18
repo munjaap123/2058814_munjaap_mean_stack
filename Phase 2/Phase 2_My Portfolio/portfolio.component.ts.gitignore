@@ -1,0 +1,65 @@
+import { contacts } from './../contacts.model';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormControl, FormControlName, FormGroup, Validators} from '@angular/forms';
+import { profile } from '../profile.model';
+
+@Component({
+  selector: 'app-portfolio',
+  templateUrl: './portfolio.component.html',
+  styleUrls: ['./portfolio.component.css']
+})
+
+export class PortfolioComponent implements OnInit {
+
+ // @  Input() loginForm: FormGroup;
+  msg:string="";
+  loginFlag: boolean = true;
+  
+  portfolioFlag: boolean = false;
+  RegisterFlag: boolean = false;
+ // user: any = loginRef.valid;
+  //pass: any = "";
+  contacts:Array<contacts>=new Array();
+  users:Array<profile>=new Array();
+  profile: any;
+  loginForm = new FormGroup({
+    user:new FormControl("",[Validators.required]),
+    pass:new FormControl("",[Validators.required])
+  })
+  constructor() { }
+  ngOnInit(): void {
+  }
+  toggle(): any{
+    this.loginFlag = false;
+    this.portfolioFlag = true;
+    this.RegisterFlag = false;
+    
+  }
+  checkUser(loginForm:FormGroup){
+    let login = this.loginForm.value;
+
+    //let user = login.user;
+    //console.log(login);
+    
+    if(login.user==this.profile.values.usern && login.pass==this.profile.values.passw){
+        this.msg = "Successfully Login!"
+    }else {
+        this.msg = "Failure try once again!";
+    }
+    loginForm.reset();
+  }
+  register(): any{
+     let usern = FormControlName.name;
+     let passw = FormControlName;
+     const signupForm = new FormGroup({
+      user:new FormControl("",[Validators.required]),
+      pass:new FormControl("",[Validators.required])
+    })
+   }
+  SaveData(): any{
+    let cname;
+    let phone;
+
+   }
+
+}
