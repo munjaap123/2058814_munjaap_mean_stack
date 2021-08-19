@@ -1,0 +1,40 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<form>
+
+<h1> Tasks to Complete </h1>
+<label> ID: </label>
+<input matInput name="id" placeholder="Enter ID" #idRef /> 
+
+<label> Name: </label>
+<input matInput name = "name" placeholder = "Enter Name" #nameRef/>
+
+<label> Task: </label>
+<input matInput name = "task" placeholder="enter task" #taskRef/>
+
+
+<label> Dead Line: </label>
+<input matInput date ="DeadLine" placeholder = "DD/MM/YYYY" #dueRef/> 
+
+<button (click) = "addTask(idRef,nameRef,taskRef,dueRef)"> Add New Task </button>
+<!--<button (click) = "addTask(id.value)"> Add New Task </button> -->
+</form>
+
+<div id = "div">
+<table>
+  <tr>
+  <th> ID </th>
+  <th> Name</th>
+  <th> Task </th>
+  <th> Deadline</th>
+  </tr>
+<td> </td>
+</table>
+</div>
+
