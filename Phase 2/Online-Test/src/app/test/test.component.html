@@ -1,0 +1,32 @@
+<div>
+    <h2>Welcome </h2>
+    <form #testRef="ngForm">
+            <div *ngFor="let q of allQuestion">
+                   <p>{{q.question}}</p> 
+                   <input type="radio" name={{q.question}} value={{q.ans1}} ngModel/>{{q.ans1}}<br/>
+                   <input type="radio" name={{q.question}} value={{q.ans2}} ngModel/>{{q.ans2}}<br/>
+                   <input type="radio" name={{q.question}} value={{q.ans3}} ngModel/>{{q.ans3}}<br/>
+                   <input type="radio" name={{q.question}} value={{q.ans4}} ngModel/>{{q.ans4}}<br/>
+            </div>
+        
+    </form>
+</div>
+
+<button (click) = "submit()" > Submit answers </button>
+
+
+
+
+
+
+
+
+
+
+<!--<div *ngFor="let question of test">
+    <p>{{question.test}}</p> 
+    <input type="radio" name={{question.test}} value={{question.ans1}} ngModel/>{{question.ans1}}<br/>
+    <input type="radio" name={{question.test}} value={{question.ans2}} ngModel/>{{question.ans2}}<br/>
+    <input type="radio" name={{question.test}} value={{question.ans2}} ngModel/>{{question.ans3}}<br/>
+    <input type="radio" name={{question.test}} value={{question.ans2}} ngModel/>{{question.ans4}}<br/>
+</div>-->
