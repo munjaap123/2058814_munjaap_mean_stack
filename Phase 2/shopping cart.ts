@@ -1,29 +1,64 @@
 
 
-var name: string;
-var price: number;
+var price: string;
 var currentCount = 0;
-var item;
+var item: string;
+var items: any;
 var itemStrings;
+var currentCount = 0;
+var i: number;
+
 var tableContent;
+var shopAwayCart: any[] = [];
+//var item:string = "";
 
-var shopAwayCart = [];
-
-function addItem(name,price){
-    console.log(name);
+function addItem(){
+   //item = {nm: name, p: price, qty: currentCount};
+    console.log(item);
     console.log(price);
+    var counting = document.createElement("keys");
+    document.getElementById("cartItems").appendChild(counting);
+    currentCount++;
+
+    items = { i: item, p: price, qty: currentCount};
+    itemStrings = JSON.stringify(item);
+    localStorage.setItem("Items", itemStrings);
+
+
+    shopAwayCart.push(items);
+    localStorage.setItem("Shopping Items:", JSON.stringify(shopAwayCart));
+
+    for( i = 0; i<items.length; i++) {
+    tableContent += "<tr><td>" + items[i].item;
+    tableContent += "<tr><td>" + items[i].price;
+    tableContent += "<tr><td>" + items[i].item;
+
+    }
+}
+
+function display(): any{
+  let table= <HTMLDivElement>document.getElementById('table-content');
+
+  if(table){
+      table.innerHTML = tableContent;
+  }
+  for( i = 0; i<items.length; i++) {
+    tableContent += "<tr><td>" + items[i].i;
+    tableContent += "<tr><td>" + items[i].p;
+    tableContent += "<tr><td>" + items[i].item;
+}
 
 
 
-var counting = document.createElement("div");
+//var counting = document.createElement("keys");
 
-document.getElementById("cartItems").appendChild(counting);
-currentCount++;
+//document.getElementById("cartItems").appendChild(counting);
+//currentCount++;
 
 
-item = {nm: name, p: price, qty: currentCount};
-itemStrings = JSON.stringify(item);
-localStorage.setItem("Items", itemStrings);
+//item = {nm: name, p: price, qty: currentCount};
+//itemStrings = JSON.stringify(item);
+/*localStorage.setItem("Items", itemStrings);
 
 
 shopAwayCart.push(item);
@@ -40,7 +75,7 @@ if(table){
     table.innerHTML = tableContent;
 }
 
-}
+}*/
 
 /*function removeItem(itemName:string){
     let comps = JSON.parse(sessionStorage.getItem("comps") || "[]");

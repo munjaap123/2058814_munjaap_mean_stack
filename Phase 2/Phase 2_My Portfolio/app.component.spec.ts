@@ -1,11 +1,11 @@
 import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { appComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        appComponent
       ],
     }).compileComponents();
   });
@@ -17,7 +17,7 @@ describe('AppComponent', () => {
   });
 
   it(`should have as title 'my-portfolio'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(appComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('my-portfolio');
   });
@@ -29,3 +29,11 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('.content span')?.textContent).toContain('my-portfolio app is running!');
   });
 });
+function expect(title: any) {
+    throw new Error('Function not implemented.');
+}
+
+function beforeEach(arg0: () => Promise<void>) {
+    throw new Error('Function not implemented.');
+}
+

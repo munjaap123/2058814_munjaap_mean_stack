@@ -1,0 +1,20 @@
+.Item{
+    margin-top: 20px;
+    border-style: solid;
+    width:fit-content;
+}
+#cartsize{
+    text-align: center;
+}
+a{
+  bottom: 100px;
+}
+img{
+    height:50px
+}
+body{
+    width:auto;
+}
+.Back{
+    top: 300px;
+}

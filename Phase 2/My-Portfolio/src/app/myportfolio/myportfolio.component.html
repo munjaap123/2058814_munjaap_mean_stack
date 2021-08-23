@@ -1,0 +1,65 @@
+<p>myportfolio works!</p>
+<div *ngIf = loginFlag>
+    <p>Signin Form</p>
+    <form [formGroup]="loginRef" >
+    <label>UserName</label>
+    <input type="text"  formControlName = "user"  /><br/>
+    <label>Password</label>
+    <input type="password" formControlName = "pass" /><br/>
+    <input type="submit" value="submit"  (ngSubmit) = "checkUser(loginForm)" [disabled]="!loginForm.valid"/>
+    <input type="reset" value="reset"/>
+    </form>
+    
+    <br/>
+    {{msg}}
+    <input type = "button" [value]= "" (click) = "toggle()" />
+    </div>
+    
+    <div * ngIf = porfolioFlag> 
+        <form  >
+    <h2> Contacts </h2>
+    <p>Welcome  </p>
+    <label>Name: </label>
+    <input type="text" #nameRef value=""   /><br/>
+    <label>Phone #: </label>
+    <input type="text" #phoneRef value="" /><br/>
+
+ </form>
+    <table >
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            
+        </tr>
+        <tr *ngFor = "let contact of contacts">   
+                <td>{{contact.cname}}</td>
+               <td>{{contact.phone}}</td>
+            
+        </tr>
+    </table>
+    
+    <input type ="button" value = "save" (click) = "SaveData()" />
+    </div>
+       <!-- <button id = "signup" >
+            Sign Up
+        </button></a> -->
+    
+<div * ngIf = "RegisterFlag">
+    <form >
+<h2>Registration</h2>
+
+<!--<a href = "tdf-login-page.component.html">Login </a>-->
+
+<label>First Name </label>
+<input type="text" name="fname" #firstnameRef [value]=""   /><br/>
+<label>Last Name </label>
+<input type="text" name="lname" #lastnameRef [value]=""  /><br/>
+
+<label>UserName </label>
+<input type="text" #usernameRef name="usrset"  [value] = "" minlength="2"/><br/>
+<label>Password </label>
+<input type="password" #passwordRef name="pwdset" [value] = ""/><br/>
+
+<input type ="button" value = "Register" (click) = "register()" />
+</form>
+</div>
