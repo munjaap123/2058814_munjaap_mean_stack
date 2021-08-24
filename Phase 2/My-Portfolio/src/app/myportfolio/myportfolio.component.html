@@ -1,65 +1,61 @@
 <p>myportfolio works!</p>
 <div *ngIf = loginFlag>
-    <p>Signin Form</p>
-    <form [formGroup]="loginRef" >
-    <label>UserName</label>
-    <input type="text"  formControlName = "user"  /><br/>
-    <label>Password</label>
-    <input type="password" formControlName = "pass" /><br/>
-    <input type="submit" value="submit"  (ngSubmit) = "checkUser(loginForm)" [disabled]="!loginForm.valid"/>
-    <input type="reset" value="reset"/>
+  <p>Signin Form</p>
+    <form [formGroup]="loginRef" (ngSubmit) = "checkUser()" >
+        <label>UserName</label>
+        <input type="text"  formControlName = "user"  /><br/>
+        <label>Password</label>
+        <input type="password" formControlName = "pass" /><br/>
+        <input type="submit" value="submit"  [disabled]="!loginRef.valid"/>
+         <input type="reset" value="reset"/>
     </form>
-    
     <br/>
     {{msg}}
     <input type = "button" [value]= "" (click) = "toggle()" />
     </div>
-    
-    <div * ngIf = porfolioFlag> 
-        <form  >
-    <h2> Contacts </h2>
-    <p>Welcome  </p>
-    <label>Name: </label>
-    <input type="text" #nameRef value=""   /><br/>
-    <label>Phone #: </label>
-    <input type="text" #phoneRef value="" /><br/>
 
- </form>
-    <table >
-        <tr>
-            <th>Name</th>
-            <th>Phone Number</th>
-            
-        </tr>
-        <tr *ngFor = "let contact of contacts">   
-                <td>{{contact.cname}}</td>
-               <td>{{contact.phone}}</td>
-            
-        </tr>
-    </table>
-    
-    <input type ="button" value = "save" (click) = "SaveData()" />
-    </div>
-       <!-- <button id = "signup" >
-            Sign Up
-        </button></a> -->
-    
+
 <div * ngIf = "RegisterFlag">
-    <form >
+<form [formGroup] = "regRef" (ngsubmit)="register()">
 <h2>Registration</h2>
 
-<!--<a href = "tdf-login-page.component.html">Login </a>-->
-
 <label>First Name </label>
-<input type="text" name="fname" #firstnameRef [value]=""   /><br/>
+<input type="text"  formControlName = "fname"   /><br/>
 <label>Last Name </label>
-<input type="text" name="lname" #lastnameRef [value]=""  /><br/>
-
+<input type="text"  formControlName = "lname"   /><br/>
 <label>UserName </label>
-<input type="text" #usernameRef name="usrset"  [value] = "" minlength="2"/><br/>
+<input type="text" formControlName ="usrset"   /><br/>
 <label>Password </label>
-<input type="password" #passwordRef name="pwdset" [value] = ""/><br/>
+<input type="password" formControlName="pwdset"  /><br/>
 
-<input type ="button" value = "Register" (click) = "register()" />
+<input type ="submit" value = "Register"/>
 </form>
+<input type="button" value="Login" (click)="login()">
 </div>
+
+
+
+
+
+<div * ngIf = porfolioFlag> 
+    <form [formGroup]="portRef" (ngsubmit) = "SaveData()">
+       <h2> Contacts </h2>
+       <p>Welcome {{loginRef.value.user}} </p>
+       <label>Name: </label>
+       <input type="text" formControlName = "Name" value=""   /><br/>
+       <label>Phone #: </label>
+       <input type="text" formControlName = "Phone" value="" /><br/>
+    </form>
+       <table>
+           <tr>
+               <th>Name</th>
+               <th>Phone Number</th>
+           </tr>
+           <tr *ngFor = "let contacts of contact">   
+                   <td>{{contacts.cname}}</td>
+                  <td>{{contacts.phone}}</td>
+           </tr>
+       </table>
+       <input type ="submit" value = "Save" />
+       </div>
+<!--<a href = "tdf-login-page.component.html">Login </a>-->
