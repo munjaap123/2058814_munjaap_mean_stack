@@ -10,19 +10,19 @@
 
 <h1> Tasks to Complete </h1>
 <label> ID: </label>
-<input matInput name="id" placeholder="Enter ID" #idRef /> 
+<input matInput id = "ID" formControlName="id" placeholder="Enter ID"  /> 
 
 <label> Name: </label>
-<input matInput name = "name" placeholder = "Enter Name" #nameRef/>
+<input matInput id = "name" formControlName = "name" placeholder = "Enter Name" />
 
 <label> Task: </label>
-<input matInput name = "task" placeholder="enter task" #taskRef/>
+<input matInput id = "task" formControlName = "task" placeholder="enter task" />
 
 
 <label> Dead Line: </label>
-<input matInput date ="DeadLine" placeholder = "DD/MM/YYYY" #dueRef/> 
+<input matInput= "date" id = "DL" formControlName="DeadLine" placeholder = "DD/MM/YYYY" /> 
 
-<button (click) = "addTask(idRef,nameRef,taskRef,dueRef)"> Add New Task </button>
+<button (click) = "addTask()"> Add New Task </button>
 <!--<button (click) = "addTask(id.value)"> Add New Task </button> -->
 </form>
 

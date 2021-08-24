@@ -17,8 +17,14 @@ export class AppComponent {
   //addTask(taskRef: NgForm){
     
  // }
-  addTask(idRef:any, nameRef:string, taskRef: string, dueRef:Date){
-    this.list.push({id:idRef, name:nameRef, task:taskRef, due:dueRef})
+  addTask(){
+
+
+    let ID = document.getElementById("ID");
+    let name = document.getElementById("name")
+    let task = document.getElementById("task");
+    let Due = document.getElementById("DL");
+    this.list.push({id:ID, nm:name, t:task, due:Due})
     console.warn(this.list)
   }
 }

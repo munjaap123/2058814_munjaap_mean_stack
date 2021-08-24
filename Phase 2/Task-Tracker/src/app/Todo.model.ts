@@ -1,6 +1,6 @@
 export interface Todo {
     id:any;
-    name:string;
-    task: string;
-    due: Date;
+    nm:any;
+    t: any;
+    due: any;
 }
