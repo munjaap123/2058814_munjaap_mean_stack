@@ -1,4 +1,4 @@
-<p>myportfolio works!</p>
+
 <div *ngIf = loginFlag>
   <p>Signin Form</p>
     <form [formGroup]="loginRef" (ngSubmit) = "checkUser()" >
@@ -9,14 +9,15 @@
         <input type="submit" value="submit"  [disabled]="!loginRef.valid"/>
          <input type="reset" value="reset"/>
     </form>
+    <input type="button" value="Register" (click)="register()">
     <br/>
     {{msg}}
-    <input type = "button" [value]= "" (click) = "toggle()" />
+  
     </div>
 
 
 <div * ngIf = "RegisterFlag">
-<form [formGroup] = "regRef" (ngsubmit)="register()">
+<form [formGroup] = "signup" (ngsubmit)="register()">
 <h2>Registration</h2>
 
 <label>First Name </label>
@@ -38,20 +39,20 @@
 
 
 <div * ngIf = porfolioFlag> 
-    <form [formGroup]="portRef" (ngsubmit) = "SaveData()">
+    <form [formGroup]="contactform" (ngsubmit) = "SaveData()">
        <h2> Contacts </h2>
        <p>Welcome {{loginRef.value.user}} </p>
        <label>Name: </label>
-       <input type="text" formControlName = "Name" value=""   /><br/>
+       <input type="text" formControlName = "Name"    /><br/>
        <label>Phone #: </label>
-       <input type="text" formControlName = "Phone" value="" /><br/>
+       <input type="text" formControlName = "Phone"  /><br/>
     </form>
        <table>
            <tr>
                <th>Name</th>
                <th>Phone Number</th>
            </tr>
-           <tr *ngFor = "let contacts of contact">   
+           <tr *ngFor = "let contacts of contacts">   
                    <td>{{contacts.cname}}</td>
                   <td>{{contacts.phone}}</td>
            </tr>
