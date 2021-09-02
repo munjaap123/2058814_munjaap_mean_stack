@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+    
+    <script src="/socket.io/socket.io.js">
+    //var socket = io();
+    </script>
+    
+  <script type="text/JavaScript">
+    var socket = io();
+    var messages = document.getElementById('messages');
+    var form = document.getElementById('form');
+    var input = document.getElementById('input');
+    var submitBtn = document.getElementById('submit');
+        
+    function sendMessagetoServer(e) {
+      e.preventDefault();
+      if (input.value){
+        socket.emit("chat", input.value);
+        input.value = ''
+      }
+    }
+
+     socket.on('chat message', function(msg) {
+       //var item = document.createElement('li');
+       //item.textContent = msg;
+       let randomMsg = ["Hi how are you?", 
+       "I will find that out for you", "Can you help me figure this code out?", 
+       "Is there anything you need?", "Please let me know how I can help.", 
+       " What are you struggling with"]
+       let randomNumber = Math.floor(Math.random()*randomMsg.length);
+       socket.emit("chat", randomMsg[randomNumber]);
+        })
+      </script>
+
+
+ <body>
+    <h2>Web Socket Program</h2>
+    <form action = "form">
+    Name :<input type="text" id="name"/><br/>
+    Messages :<input type="text" id="message"/><br/>
+    <button id = "submit">  Submit </button>
+  </form>
+    <label id = "messages"> Conversation Messages </label>
+
+    
+ </body>
+</html>
