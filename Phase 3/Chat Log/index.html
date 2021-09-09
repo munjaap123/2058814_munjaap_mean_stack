@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatingApp</title>
+</head>
+
+<script src="/socket.io/socket.io.js"> </script>
+  <script type="text/JavaScript">
+    let chatsArray = [];
+    let socket = io();
+    
+    socket.on("obj1",msg => {
+        console.log(msg);
+
+        document.getElementById("content").innerHTML += "<h4>( " + new Date().toLocaleString() + " ) Server says: " + msg;
+        info = () => {
+            var name = document.getElementById('nm').value;
+            var messages = document.getElementById('msg').value;
+            let chatmessage  = {name:name, msg: messages};
+            socket.emit("message", chatmessage);
+            document.getElementById("content").innerHTML += "<h4>( " + new Date().toLocaleString() + " ) Server says: " + name + "said: " + messages;
+            console.log(messages);
+            document.getElementById("msg").value = " ";
+        }
+
+          chatsArray.forEach(element => {
+               console.log("look here");
+          })
+    })
+    
+    </script>
+<body>
+    <h2>Chat Log</h2>
+    <div id = "content">
+        Name :    <input type="text" id="nm"  name="name"/><br/>
+        Messages :<input type="text" id="msg" name = "message"/><br/>
+        <input type = "submit" value = "Send" onclick = "sendMessage()">   </input>
+    </div>
+
+</body>
+</html>
