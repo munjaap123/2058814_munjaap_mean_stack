@@ -1,4 +1,8 @@
-declare class Map<T, U> {
+
+console.log("Welcome to typescript")
+
+
+/*declare class Map<T, U> {
 	set(t:T, u:U):Map<T, U>
 	has(t:T):boolean;
 	delete(t:T):Map<T,U>
@@ -104,4 +108,4 @@ const cart = removeItem(create(), { sku: '123213', quantity: 2 });
 
 // this is also an error, as you can only pay loaded carts, but not paid. The enum tag
 // ensures that the type's structure is different.
-const twicePaidCart = pay(paidCart)
+const twicePaidCart = pay(paidCart) */

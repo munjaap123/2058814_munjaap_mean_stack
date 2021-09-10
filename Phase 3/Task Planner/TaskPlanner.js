@@ -52,7 +52,7 @@ let listoftasks = `
   </html>
 `
 
-let server = http.createServer((request,response)=> {
+ http.createServer((request,response)=> {
     let urlInfo = url.parse(request.url,true);
     console.log(urlInfo);
     if(urlInfo.path != "/favicon.ico"){
@@ -105,8 +105,7 @@ let server = http.createServer((request,response)=> {
          response.write(Addtask); 
         
        } 
-      })
-       server.listen(9090,()=>console.log("Server running on port number 9090"));
+      }).listen(9090,console.log("Server running on port number 9090"));
     //fs.
 //let urlInfo = url.parse(request.url,true);
 //let user = request.query["empId"];

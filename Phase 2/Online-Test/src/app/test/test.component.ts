@@ -51,7 +51,7 @@ correctAns: "File Explorer"
   //{question:"5+5",ans1:"10",ans2:"11",ans3:"12",ans4:"13",correctAns:"10"},
    // {question:"5-5",ans1:"0",ans2:"1",ans3:"2",ans4:"3",correctAns:"0"}
 ]
-submit(){
+checkAnswers():any{
   //return this.http.get<allQuestion[]>("/assets/test-questions.json");
 }
 }
