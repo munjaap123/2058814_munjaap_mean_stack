@@ -1,9 +1,13 @@
 let express = require("express");
 let app = express();
-let http = require("http");
-let server = http.createServer(app);
-const { Server } = require("socket.io");
-const io = new Server(server);
+let http = require("http").Server(app);
+let readline = require("readline");
+let obj = readline.createInterface({
+  input:process.stdin,
+  output:process.stdout
+})
+let io = require("socket.io")(http);
+
 
 
 
@@ -16,36 +20,51 @@ socket.emit("obj1", randomMsg[randomNumber]); */
         res.sendFile(__dirname+"\\index.html");
     })
 
-    io.on('connection', (socket) => {
+    io.on("connection", (socket) => {
+        obj.setPrompt(`Server: `);
+        obj.prompt();
         console.log('a user connected');
-        socket.on("chat", (msg) => {
-        var item = document.createElement('li');
-        item.textContent = msg;
-        //document.getElementById
-    })
-})
 
-    io.on('connection', (socket) => {
-        socket.on('chat message', (msg) => {
+        socket.on("hello_server", (msg) => {
+          let randomMsg = ["Hi how are you?", 
+                      "I will find that out for you", 
+                      "Can you help me figure this code out?", 
+                      "Is there anything you need?", 
+                      "Would you like to speak to a representative?", 
+                      "Please select from the following options."]
+          let randomNumber = Math.floor(Math.random()*randomMsg.length);
+          socket.emit("client_connected", randomMsg[randomNumber]);
+          console.log(msg);
+          //obj.prompt();
+      
+        })
+
+        socket.on("name", (msg) => {
+          console.log("Hello" + msg)
+        })
+
+        socket.on("messages", (msg) => {
           console.log('message: ' + msg);
         });
-    });
+    
 
 
-    io.on('connection', (socket) => {
-        socket.on('chat message', (msg) => {
-          io.emit('chat message', msg);
+    socket.emit("client_connected", "Client connected to server");
+    obj.prompt();
+    obj.on('line', (msg) => {
+          io.emit("chat messages", msg),
+          obj.prompt();
         });
-      });
+      
 
-      io.on('connection', (socket) => {
+     /* socket.on('connection', (socket) => {
         console.log('Client connected');
         socket.on('disconnect', () => {
           console.log(' Client disconnected');
         });
-      });
+      }); */
+    })
 
-    app.listen(9090, () => 
-            console.log('listening on *:9090'));
+  http.listen(9090, () => console.log('listening on *:9090'));
   
     
