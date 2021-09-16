@@ -9,13 +9,6 @@ let obj = readline.createInterface({
 let io = require("socket.io")(http);
 
 
-
-
-/* let randomMsg = ["Hi how are you?", "I will find that out for you", "Can you help me figure this code out?", "Is there anything you need?", "Please let me know how I can help.", "If you are struggling with something, please select a topic."]
-let randomNumber = Math.floor(Math.random()*randomMsg.length);
-socket.emit("obj1", randomMsg[randomNumber]); */
-
-
     app.get("/",(req,res)=> {
         res.sendFile(__dirname+"\\index.html");
     })

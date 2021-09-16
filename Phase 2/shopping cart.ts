@@ -46,7 +46,7 @@ function addItem(item, price){
     //localStorage.setItem("Shopping Items:", JSON.stringify(shopAwayCart));
     }
 
-function display(): any{
+function display(){
 
   let entryObj:string = localStorage.getItem('entryObj') || '{}';
   let entryJson:{item:string; price:string;}[] = JSON.parse(entryObj);

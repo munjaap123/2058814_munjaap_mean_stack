@@ -13,7 +13,7 @@ var tableContent;
 //var shopAwayCart: any[] = [];
 //var item:string = "";
 
-function addItem(item, price){
+function addItem(item, price): any{
    //item = {nm: name, p: price, qty: currentCount};
     //console.log(item);
     //console.log(price);
@@ -46,7 +46,7 @@ function addItem(item, price){
     //localStorage.setItem("Shopping Items:", JSON.stringify(shopAwayCart));
     }
 
-function display(): any{
+function display():any{
 
   let entryObj:string = localStorage.getItem('entryObj') || '{}';
   let entryJson:{item:string; price:string;}[] = JSON.parse(entryObj);
